@@ -1,0 +1,66 @@
+site_name: My Docs=
+
+extra:
+  version:
+    alias: true
+    default: master
+    provider: mike
+
+
+theme:
+  name: material
+  custom_dir: docs/example-path
+  features:
+    - announce.dismiss
+    - navigation.footer
+    - navigation.indexes
+    - pymdownx.snippets
+nav:
+  - 'omni-cc-orders':
+      - index.md
+      - 'Общее':
+          - general/requirements.md
+      - 'Внутренние сервисы':
+          - 'credit-card/list':
+              - services/credit_card_list/index.md
+              - services/credit_card_list/openApi.md
+      - 'Папка 1':
+          - example-path/index.md
+          - example-path/example1.md
+          - 'Папка в папке':
+              - example-path/path-in-path/index.md
+              - example-path/path-in-path/example1.md
+markdown_extensions:
+  - attr_list
+  - md_in_html
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+  - abbr
+  - pymdownx.snippets
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets:
+      auto_append: [ "/requirements.md" ]
+      base_path: [ "docs" ]
+  - pymdownx.superfences
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+
+plugins:
+  - render_swagger
+  - neoteroi.mkdocsoad
+  - mike:
+      version_selector: false
+  - search:
+      lang: ru
+  - plantuml:
+      puml_url: https://www.plantuml.com/plantuml/
+      theme:
+        enabled: false
